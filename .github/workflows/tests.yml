@@ -1,0 +1,31 @@
+# Workflow de CI: corre los tests de Playwright en cada push y pull request.
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:        # permite correrlo a mano desde la pestaña Actions
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código del repo
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip        # guarda las librerías para que la próxima vez sea más rápido
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Instalar Chromium para Playwright
+        run: python -m playwright install --with-deps chromium
+
+      - name: Correr los tests
+        run: pytest -v

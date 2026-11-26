@@ -1,5 +1,7 @@
 # 🧪 QA Automation Portfolio – Playwright + Pytest
 
+[![Tests](https://github.com/leonardoept/qa-automation-portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/leonardoept/qa-automation-portfolio/actions/workflows/tests.yml)
+
 Proyecto de automatización de pruebas end-to-end sobre [SauceDemo](https://www.saucedemo.com/), una aplicación de e-commerce de práctica.
 Forma parte de mi transición de QA manual a **QA Automation**, aplicando buenas prácticas de diseño de casos de prueba que uso desde hace años en testing funcional.
 
@@ -62,7 +64,7 @@ pytest -v --headed
 - [ ] Page Object Model
 - [ ] Tests de API con `requests`
 - [ ] Validaciones de datos con SQL (PostgreSQL)
-- [ ] Integración continua con GitHub Actions
+- [x] Integración continua con GitHub Actions
 - [ ] Reportes con Allure
 
 ## 👤 Autor
